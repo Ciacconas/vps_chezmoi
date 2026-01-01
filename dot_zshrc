@@ -78,7 +78,7 @@ prompt(){
     retval=$1
 
     # # random emoji each prompt
-    echo -ne "%F{yellow}✨%f "
+    echo -ne "%F{yellow}🌐%f "
 
     # is root user
     [[ $UID == 0 ]] && echo -ne "%B%F{yellow}%{%G%} %f%b " # 
