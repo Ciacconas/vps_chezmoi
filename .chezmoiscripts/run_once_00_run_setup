@@ -106,7 +106,7 @@ apt_install(){ # will only install the first argument!
 ## Start script
 ## -----------------------------------------------------------------------------------
 #chsh -s /usr/bin/zsh #change shell to zsh
-echo $password | sudo -S chsh -s /usr/bin/zsh "$USER"
+echo $password | sudo -S chsh -s /usr/bin/zsh "$USER" >> "$LOG" 2>> "$ERR"
 
 ## zoxide
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh #zoxide

@@ -17,9 +17,6 @@ function sourcefile {
   [[ -f "$1" ]] && source "$1"
 }
 
-# source settings not in source control
-sourcefile $HOME/.zshrc2
-
 # History
 export HISTFILE="$HOME/.bash_history"
 export HISTSIZE=10000000
@@ -172,7 +169,7 @@ alias :x=exit
 eval "$(zoxide init --cmd j zsh)"
 
 # autosuggest
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+sourcefile $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Change the ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE to 'fg=7'
 typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 bindkey '^p' autosuggest-accept #-execute
@@ -180,7 +177,7 @@ bindkey '^n' autosuggest-accept #-execute
 bindkey '^o' autosuggest-toggle # enable/disable autosuggest
 
 ## fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 ## Load zsh-syntax-highlighting; should be last.
 sourcefile $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
