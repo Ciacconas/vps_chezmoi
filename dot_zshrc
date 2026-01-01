@@ -12,6 +12,18 @@
 export TEXBASE=main
 export LANG=en_US.UTF-8
 
+# Add /usr/sbin if not already in PATH
+if [[ ":$PATH:" != *":/usr/sbin:"* ]]; then
+  PATH+=":/usr/sbin"
+fi
+
+# Add /sbin if not already in PATH
+if [[ ":$PATH:" != *":/sbin:"* ]]; then
+  PATH+=":/sbin"
+fi
+
+export PATH
+
 # source function (ignore file if file does not exist)
 function sourcefile {
   [[ -f "$1" ]] && source "$1"
